@@ -89,6 +89,8 @@ async function saveLaunch(launch) {
   const checkPlanet = await planets.findOne({
     keplerName: launch.target
   });
+
+  console.log(checkPlanet);
   if (!checkPlanet) {
     throw new Error("No matching planet");
   }
